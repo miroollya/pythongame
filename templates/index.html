@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quest</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+
+        form {
+            margin: 20px auto;
+            display: inline-block;
+            animation: fadeIn 2s;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #182848;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #4b6cb7;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Python Quest</h1>
+    <form action="/start" method="post">
+        <label for="player_name">Enter your character's name:</label>
+        <input type="text" id="player_name" name="player_name">
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>

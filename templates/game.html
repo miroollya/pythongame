@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quest</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            animation: fadeIn 2s;
+        }
+
+        form {
+            margin: 20px auto;
+            display: inline-block;
+            animation: fadeIn 2s;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #182848;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #4b6cb7;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ player_name }}!</h1>
+    {% for line in story %}
+        <p>{{ line }}</p>
+    {% endfor %}
+    
+    {% if task == 'task1' %}
+    <form action="/task1" method="post">
+        <input type="text" id="item" name="item" placeholder="Enter 'Magic Wand'">
+        <input type="hidden" name="player_name" value="{{ player_name }}">
+        <button type="submit">Submit</button>
+    </form>
+    {% elif task == 'task2' %}
+    <form action="/task2" method="post">
+        <input type="text" id="list_data" name="list_data" placeholder="List 3 items">
+        <input type="hidden" name="player_name" value="{{ player_name }}">
+        <button type="submit">Submit</button>
+    </form>
+    {% elif task == 'task3' %}
+    <form action="/task3" method="post">
+        <input type="text" id="greeting" name="greeting" placeholder="Create a greeting message">
+        <input type="hidden" name="player_name" value="{{ player_name }}">
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+</body>
+</html>
